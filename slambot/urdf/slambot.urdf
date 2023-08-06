@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="slambot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00486087456597608 0.0464146347438362 0.00611694047505629"
+        rpy="0 0 0" />
+      <mass
+        value="1.20382005921554" />
+      <inertia
+        ixx="0.00159178309926774"
+        ixy="-4.62464413444002E-06"
+        ixz="3.2214445095357E-06"
+        iyy="0.00372559343409888"
+        iyz="-1.87575153377214E-07"
+        izz="0.00221898802114069" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slambot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slambot/meshes/leftwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="leftwheel">
+    <inertial>
+      <origin
+        xyz="-4.8380670515831E-08 0.0135771334623421 -4.19647629146258E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0495394216537742" />
+      <inertia
+        ixx="2.0755916521774E-05"
+        ixy="4.59201786213402E-11"
+        ixz="-1.70768760858627E-12"
+        iyy="3.5904291421144E-05"
+        iyz="1.80231596245394E-13"
+        izz="2.07559164376357E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slambot/meshes/leftwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slambot/meshes/leftwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftjoint"
+    type="fixed">
+    <origin
+      xyz="0 0.084104 -0.034"
+      rpy="3.1416 0.20897 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="leftwheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rightwheel">
+    <inertial>
+      <origin
+        xyz="-4.83806705166984E-08 0.0135771334623423 -4.1964761526847E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0495394216537743" />
+      <inertia
+        ixx="2.0755916521774E-05"
+        ixy="4.59201786224344E-11"
+        ixz="-1.7076876102805E-12"
+        iyy="3.59042914211439E-05"
+        iyz="1.80231588558602E-13"
+        izz="2.07559164376357E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slambot/meshes/rightwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slambot/meshes/rightwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightjoint"
+    type="fixed">
+    <origin
+      xyz="0 -0.084104 -0.034"
+      rpy="0 0.20897 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="rightwheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="laser">
+    <inertial>
+      <origin
+        xyz="0.00913303321578293 -0.00496043575591988 0.00349637918534401"
+        rpy="0 0 0" />
+      <mass
+        value="0.0312409126906036" />
+      <inertia
+        ixx="8.87752522204387E-06"
+        ixy="-1.27250165527674E-07"
+        ixz="1.13333903281163E-07"
+        iyy="1.44937401756783E-05"
+        iyz="3.35911337403875E-08"
+        izz="2.25289098198674E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slambot/meshes/laser.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slambot/meshes/laser.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laserjoint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0051063 0.14195"
+      rpy="0 0 -3.1401" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="depth">
+    <inertial>
+      <origin
+        xyz="0.040807630537116 -0.01110143348578 0.00935971482762341"
+        rpy="0 0 0" />
+      <mass
+        value="0.0200496149799104" />
+      <inertia
+        ixx="1.55788313722684E-06"
+        ixy="1.44225555251865E-08"
+        ixz="-1.9733710189472E-09"
+        iyy="1.39532384304395E-05"
+        iyz="4.68005216145946E-09"
+        izz="1.5166113650296E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slambot/meshes/depth.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slambot/meshes/depth.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="depthjoint"
+    type="fixed">
+    <origin
+      xyz="0.055405 0.041 0.1165"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="depth" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

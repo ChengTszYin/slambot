@@ -1,0 +1,26 @@
+<launch>
+    <param name="robot_description" textfile="$(find slambot)/urdf/slambot.urdf" />
+    
+    <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" >
+    </node>
+    
+    <node pkg="rosserial_python" type="serial_node.py" name="rosserial" output="screen">
+        <param name="port" value="/dev/ttyACM0"/>
+        <param name="baud" value="57600"/>
+    </node>
+    
+    <node pkg="slambot" type="nox_twice" name="nox_controller" output="screen">
+        <param name="publish_tf" value="true" />
+    		<param name="publish_rate" value="10.0" />
+    		<param name="linear_scale_positive" value="1.025" />
+    		<param name="linear_scale_negative" value="1.025" />
+    		<param name="angular_scale_positive" value="1.078" />
+    		<param name="angular_scale_negative" value="1.078" />
+		<param name="angular_scale_accel" value="0.0" />
+    </node>
+    <include file="$(find ydlidar_ros_driver)/launch/X2.launch"/>
+
+</launch>
